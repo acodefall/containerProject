@@ -1,0 +1,9 @@
+qname=queueR2
+exchange=exchangeR3
+duration=10
+user=guest
+pass=guest
+svr=localhost
+rkey=urlList3
+containerlogpath=/root/appconfig
+connectionstring=amqp://test:test@172.22.0.3:5672

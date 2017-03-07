@@ -1,0 +1,23 @@
+#this file should be where project.json is
+FROM microsoft/dotnet:latest
+COPY bin/release/netcoreapp1.0/publish/ /root/
+EXPOSE 6000/tcp
+ENV ASPNETCORE_URLS http://*:6000
+ENTRYPOINT dotnet /root/ComsumerHashAPI.dll
+
+#dotnet publish project.json -c release -r centos.7-x64
+#dotnet publish project.json -c release -r win10-64
+#Published to C:\Temp\ComsumerHashAPI\src\ComsumerHashAPI\bin\release\netcoreapp1.0\publish
+#copy ConsumerNormal.txt manually to above folder
+
+#WORKING combination
+
+#docker build -t dems:ComsumerHashAPI .
+#docker images
+#docker run -it -v C:/Temp/Work_VisualStudio/S1/RabbitAsContainerLB/ComsumerHashAPI/src/ComsumerHashAPI/Config:/root/appconfig:rw -p 8080:6000 dems:ComsumerHashAPI
+
+#for testing 
+#http://localhost:8080
+#http://localhost:8080/api/Consume1/Start
+
+

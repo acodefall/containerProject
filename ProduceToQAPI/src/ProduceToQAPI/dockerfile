@@ -1,0 +1,26 @@
+FROM microsoft/dotnet:latest
+COPY bin/release/netcoreapp1.0/publish /root/
+WORKDIR  /root
+RUN mkdir logs
+WORKDIR  /root
+EXPOSE 5000/tcp
+ENV ASPNETCORE_URLS http://*:5000
+ENTRYPOINT dotnet /root/ProduceToQAPI.dll
+
+
+#dotnet publish project.json -c release -r centos.7-x64
+#dotnet publish project.json -c release -r win10-64
+#Published to C:\Temp\ProduceToQAPI\src\ProduceToQAPI\bin\release\netcoreapp1.0\publish
+
+#WORKING combination
+
+#docker build -t dems:ProduceToQAPI .
+#docker images
+#docker run -it -v C:/Temp/Work_VisualStudio/S1/RabbitAsContainerLB/ProduceToQAPI/src/ProduceToQAPI/Config:/root/appconfig:rw -p 8090:5000 -rm dems:ProduceToQAPI
+
+#for testing 
+#http://localhost:8090
+#http://localhost:8090/api/PostToQ/Start
+
+#for DotNet cli
+#http://localhost:5000/api/PostToQ/Start

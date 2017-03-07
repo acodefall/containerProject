@@ -1,0 +1,17 @@
+# use rabbitmq official
+FROM rabbitmq
+ 
+# enable management plugin
+RUN rabbitmq-plugins enable --offline rabbitmq_management
+ 
+# enable mqtt plugin
+RUN rabbitmq-plugins enable --offline rabbitmq_mqtt
+ 
+# expose management port
+EXPOSE 15672
+
+#docker build -t RabbitMQx1
+#docker run -it -h RabbitMQx1host -p 1883:1883 -p 15672:15672 -v /opt/rabbitmq:/var/lib/rabbitmq RabbitMQx1
+#docker run -it -h RabbitMQx1host -p 1883:1883 -p 15673:15672 dems:RabbitMQx1
+
+#http://www.sysrun.io/2015/11/02/dockerize-rabbitmq/
