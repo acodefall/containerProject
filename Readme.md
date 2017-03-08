@@ -13,8 +13,9 @@
 		
 4) Create a User in RabbitMQ.
 		User should have 'AdminRights'. Try to log-in as that user for testing.
+		
 		http://localhost:15673
-          u: test
+                  u: test
 		  p: test
 
 5) These config files will be mapped to container
@@ -54,7 +55,7 @@
 				
 10)	Start consumer and producers
 		
-                localhost:8081/api/Consume1/Start
+		localhost:8081/api/Consume1/Start
 		localhost:8082/api/Consume1/Start
 		localhost:8090/api/PostToQ/Start
 					
