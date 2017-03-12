@@ -53,7 +53,8 @@ namespace ProduceToQAPI.Controllers
                     writeLog(String.Format("{0} All the items got queued to RabbitMQ. {1} \r\n", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), data.Count));
                 }
             }
-            return writeLog("");
+			writeLog("");
+            return "";
         }
     }
 }

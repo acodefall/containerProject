@@ -114,12 +114,6 @@ namespace ProduceToQAPI.Controllers
             {
                 _objConnectionFactory.Uri = constring;
             }
-            else
-            {
-                _objConnectionFactory.Password = pass;
-                _objConnectionFactory.UserName = user;
-                _objConnectionFactory.HostName = server;
-            }
 
             Console.WriteLine("connectRabbit start");
 

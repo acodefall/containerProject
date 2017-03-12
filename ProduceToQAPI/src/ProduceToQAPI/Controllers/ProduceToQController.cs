@@ -53,7 +53,10 @@ namespace ProduceToQAPI.Controllers
                 cnfg = "Config/PublishToQ.txt";
                 logPath = hostingEnv.ContentRootPath;
             }
-             objPublishToQ.init(cnfg, logPath, "ProduceToQAPI");
+			Console.WriteLine("Thread -> {0} calling Init()", Thread.CurrentThread.ManagedThreadId);
+            objPublishToQ.init(cnfg, logPath, "ProduceToQAPI");
+			Console.WriteLine("Thread -> {0} calling prepareMQ()", Thread.CurrentThread.ManagedThreadId);
+			objPublishToQ.prepareMQ();
          
             Console.WriteLine("\r\n Thread -> {0} completed", Thread.CurrentThread.ManagedThreadId);
         }

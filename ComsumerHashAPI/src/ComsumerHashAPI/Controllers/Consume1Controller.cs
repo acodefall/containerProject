@@ -56,8 +56,9 @@ namespace ComsumerHashAPI.Controllers
                 logPath = hostingEnv.ContentRootPath;
             }
           
-
+			Console.WriteLine("Thread -> {0} calling Init()", Thread.CurrentThread.ManagedThreadId);
             objConsumerNormal.init(cnfg, logPath, "ComsumerHashAPI");
+			Console.WriteLine("Thread -> {0} calling prepareMQ()", Thread.CurrentThread.ManagedThreadId);
             objConsumerNormal.prepareMQ();
         }
     }
